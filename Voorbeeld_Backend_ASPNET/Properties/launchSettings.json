@@ -12,7 +12,7 @@
     "Voorbeeld_Backend_ASPNET": {
       "commandName": "Project",
       "launchBrowser": true,
-      "launchUrl": "weatherforecast",
+      "launchUrl": "markten",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
       },
@@ -22,7 +22,7 @@
     "IIS Express": {
       "commandName": "IISExpress",
       "launchBrowser": true,
-      "launchUrl": "weatherforecast",
+      "launchUrl": "markten",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
       }
