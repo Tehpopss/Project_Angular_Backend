@@ -24,32 +24,6 @@ app.MapPost("/markten", async (Todo todo, TodoDb db) =>
     return Results.Created($"/markten/{todo.Id}", todo);
 });
 
-app.MapPut("/markten/{id}", async (int id, Todo inputTodo, TodoDb db) =>
-{
-    var todo = await db.Todos.FindAsync(id);
-
-    if (todo is null) return Results.NotFound();
-
-    todo.Name = inputTodo.Name;
-    todo.Locatie = inputTodo.Locatie;
-
-    await db.SaveChangesAsync();
-
-    return Results.NoContent();
-});
-
-app.MapDelete("/markten/{id}", async (int id, TodoDb db) =>
-{
-    if (await db.Todos.FindAsync(id) is Todo todo)
-    {
-        db.Todos.Remove(todo);
-        await db.SaveChangesAsync();
-        return Results.Ok(todo);
-    }
-
-    return Results.NotFound();
-});
-
 app.UseCorsMiddleware();
 
 app.Run();
